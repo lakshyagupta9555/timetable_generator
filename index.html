@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable Generator</title>
+  <script src="timetable.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold text-center mb-8">Timetable Generator</h1>
+
+    <!-- Inputs for number of classes, teachers, and lectures -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div>
+        <label for="numClasses" class="block text-lg font-medium text-gray-700">Number of Classes</label>
+        <input type="number" id="numClasses" min="1" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="numTeachers" class="block text-lg font-medium text-gray-700">Number of Teachers</label>
+        <input type="number" id="numTeachers" min="1" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="numLectures" class="block text-lg font-medium text-gray-700">Number of Lectures per Day</label>
+        <input type="number" id="numLectures" min="1" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+    </div>
+
+    <!-- Dynamic input for Teacher Names -->
+    <div id="teacherInputs" class="mb-4">
+      <!-- Teacher inputs will be inserted here dynamically -->
+    </div>
+
+    <button id="generateTimetable" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Generate Timetable</button>
+
+    <!-- Display timetable -->
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Timetable</h2>
+    <table class="table-auto w-full bg-white shadow-md rounded-lg">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2">Time Slot</th>
+          <th class="px-4 py-2">Monday</th>
+          <th class="px-4 py-2">Tuesday</th>
+          <th class="px-4 py-2">Wednesday</th>
+          <th class="px-4 py-2">Thursday</th>
+          <th class="px-4 py-2">Friday</th>
+          <th class="px-4 py-2">Saturday</th>
+        </tr>
+      </thead>
+      <tbody id="timetableBody" class="text-center">
+        <!-- Dynamic rows will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
